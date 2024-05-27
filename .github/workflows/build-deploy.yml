@@ -6,7 +6,13 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: pulling git repo
+      - name: Pull git repo
         uses: actions/checkout@v4
-      - name: say hi to daniel
-        run: echo "hello daniel"
+      - name: Install Python version 3.12
+        uses: actions/setup-python@5
+        with:
+          python-version: "3.12"
+      - name: Update pip
+        run: python -m pip install --upgrade pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
