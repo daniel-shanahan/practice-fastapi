@@ -69,8 +69,8 @@ jobs:
       #     cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/fastapi:buildcache
       #     cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/fastapi:buildcache,mode=max
 
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   needs: [build]
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build]
 
-  #   steps:
+    steps:
